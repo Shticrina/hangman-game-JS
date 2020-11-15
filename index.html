@@ -6,10 +6,10 @@
     <title>HangmanJs</title>
 
     <!-- Font awesome -->
-	<script src="https://kit.fontawesome.com/2d566fa444.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2d566fa444.js" crossorigin="anonymous"></script>
 
     <!-- Google fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CDN -->
@@ -24,22 +24,30 @@
     <header id="myheader" class="py-3 text-center text-info mb-4">
         <h2 class="">Welcome to Hangman Game</h2>
         <h4 class="hello text-light font-italic d-none">Hello <span class="text-capitalize" id="username">Nickname</span>!</h4>
-
-        <!-- Trigger/Open The Modal -->
-        <button id="modalBtn" type="button" class="btn btn-danger text-uppercase pt-2">Start game</button>
     </header>
 
     <!-- Game container -->
     <div id="game-board" class="bg-light w-75 mx-auto py-5 my-5">
+        <div id="startGame" class="pt-3 row mx-auto">
+            <div class="col-12 text-center py-4">
+                <!-- Trigger/Open The Modal -->
+                <button id="modalBtn" type="button" class="btn btn-danger text-uppercase pt-2">Start game</button>
+            </div>
+
+            <div class="col-12 text-center">
+                <img src="./images/hang.png" class="w-25">
+            </div>
+        </div>
+
         <!-- Score container -->
-        <div class="score text-danger row">
+        <div class="text-danger row d-none" id="score">
             <div class="col-8 mx-auto text-center">
                 <h4>Score: <span id="pointsEarned">0</span></h4>
             </div>
         </div>
 
         <!-- Word & Keyboard -->
-        <div id="game" class="text-secondary row mb-3">
+        <div id="game" class="text-secondary row mb-3 d-none">
             <div class="col-8 mx-auto text-center">
                 <p class="current-word">Current word (<span id="guess" class="font-italic text-info"></span>): <span id="current" class="text-uppercase ml-3"></span></p>
             </div>

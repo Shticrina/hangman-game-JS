@@ -44,7 +44,29 @@ function wordFound() {
 	return hiddenWordText == currentWord;
 }
 
-generatePlayground();
+function resetGameboard() {
+	score = 0;
+	mistakes = 0;
+	hiddenWordText = "";
+	currentWord = words[Math.floor(Math.random() * words.length)];
+
+	document.getElementById("pointsEarned").innerHTML = score;
+	document.getElementById("guess").innerHTML = currentWord; // optional
+	document.getElementById("game").classList.remove("d-none");
+	document.getElementById("score").classList.remove("d-none");
+	document.getElementById("lostGame").classList.remove("d-flex");
+	document.getElementById("lostGame").classList.add("d-none");
+	document.getElementById("winGame").classList.remove("d-flex");
+	document.getElementById("winGame").classList.add("d-none");
+
+	document.querySelectorAll("button.letter").forEach( function(button) {
+		button.classList.remove("btn-danger");
+		button.classList.add("btn-info");
+	});
+
+	generatePlayground();
+}
+
 
 // Generate the buttons keyboard using the template (#template-letter) from index.html
 letters.forEach((letter, index) => {
@@ -58,9 +80,10 @@ letters.forEach((letter, index) => {
 
 keyboard.children[24].classList.replace("mx-auto", "ml-auto");
 keyboard.children[25].classList.replace("mx-auto", "mr-auto");
+generatePlayground();
 
 document.querySelectorAll("button.letter").forEach( function(button) {
-    button.addEventListener("click", function() {
+	button.addEventListener("click", function() {
 		if (currentWord.includes(button.textContent)) {
 			updatePlayground(button.textContent); // change hiddenWordText by adding the new letter all over
 			updateScore();
@@ -86,6 +109,6 @@ document.querySelectorAll("button.letter").forEach( function(button) {
 
 document.querySelectorAll("button.play-again").forEach( function(playAgainButton) {
 	playAgainButton.addEventListener("click", function() {
-		window.location.reload();
+		resetGameboard();
 	});
 });
