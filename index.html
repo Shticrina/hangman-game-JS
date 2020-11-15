@@ -6,10 +6,10 @@
     <title>HangmanJs</title>
 
     <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/2d566fa444.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/2d566fa444.js" crossorigin="anonymous"></script>
 
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CDN -->
@@ -27,7 +27,7 @@
     </header>
 
     <!-- Game container -->
-    <div id="game-board" class="bg-light w-75 mx-auto py-5 my-5">
+    <div id="game-board" class="bg-light mx-auto py-5 my-5">
         <div id="startGame" class="pt-3 row mx-auto">
             <div class="col-12 text-center py-4">
                 <!-- Trigger/Open The Modal -->
@@ -41,24 +41,24 @@
 
         <!-- Score container -->
         <div class="text-danger row d-none" id="score">
-            <div class="col-8 mx-auto text-center">
+            <div class="col-sm-8 mx-auto text-center">
                 <h4>Score: <span id="pointsEarned">0</span></h4>
             </div>
         </div>
 
         <!-- Word & Keyboard -->
         <div id="game" class="text-secondary row mb-3 d-none">
-            <div class="col-8 mx-auto text-center">
+            <div class="col-lg-8 col-sm-12 mx-auto text-center">
                 <p class="current-word">Current word (<span id="guess" class="font-italic text-info"></span>): <span id="current" class="text-uppercase ml-3"></span></p>
             </div>
 
-            <div class="letters col-6 mx-auto">
-                <div class="row row-cols-6" id="keyboard"></div>
+            <div class="letters col-lg-5 col-sm-10 mx-auto">
+                <div class="row row-cols-6 px-4" id="keyboard"></div>
             </div>
         </div>
 
         <template id="template-letter">
-            <div class="text-center col mx-auto">
+            <div class="text-center px-1 mx-auto">
                 <button class="btn btn-info text-uppercase mb-3 letter"></button>
             </div>
         </template>
@@ -66,13 +66,13 @@
         <div class="d-none flex-column justify-content-center mx-auto text-center w-50" id="lostGame">
             <p class="text-danger"><i class="fas fa-frown fa-4x"></i></p>
             <h4>You lost!</h4>
-            <button class="play-again btn btn-secondary w-25 mx-auto">Try again?</button>
+            <button class="play-again btn btn-secondary mx-auto">Try again?</button>
         </div>
 
         <div class="d-none flex-column justify-content-center mx-auto text-center w-50" id="winGame">
             <p class="text-success"><i class="fas fa-grin-beam fa-4x"></i></p>
             <h4>Congratulations! You win!</h4>
-            <button class="play-again btn btn-secondary w-25 mx-auto">Play again?</button>
+            <button class="play-again btn btn-secondary mx-auto">Play again?</button>
         </div>
     </div>
 

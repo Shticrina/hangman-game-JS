@@ -79,6 +79,7 @@ a:hover {
 /* Style Gameboard */
 #game-board {
 	min-height: 80vh;
+	width: 88%;
 }
 
 #current {
@@ -94,8 +95,42 @@ button.letter {
 	width: 75%;
 }
 
+#lostGame button,
+#winGame button {
+    width: 25%;
+}
+
 /* Style Footer */
 #myfooter {
 	font-size: 12px;
 	background-color: #053543;
+}
+
+/***************** Responsive ******************/
+
+/*extra Small devices*/
+@media (max-width: 480px) {
+	#myheader h2 {
+		padding-left: 3rem !important;
+		padding-right: 3rem !important;
+	} 
+
+	#myheader h2 {
+		font-size: 26px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	#game-board {
+		width: 88%;
+	}
+
+	.my-modal-content {
+	    width: 80%;
+	}
+
+	#lostGame button,
+	#winGame button {
+	    width: 75%;
+	}
 }
